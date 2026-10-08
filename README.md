@@ -1,4 +1,4 @@
-# KQS SupportFlow plugin for Claude
+# KQS SupportFlow plugin for Claude / ChatGPT / Generic MCP
 
 Remote support for your kiosks, workstations and servers, from Claude. This repository is the Claude plugin marketplace
 for **KQS SupportFlow** by [Koquelani Systems](https://www.koquelani.com/services). It contains only the plugin: the
