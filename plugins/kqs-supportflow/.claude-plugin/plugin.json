@@ -1,0 +1,12 @@
+{
+  "name": "kqs-supportflow",
+  "displayName": "KQS SupportFlow",
+  "version": "1.5.18",
+  "description": "Connects Claude to the KQS SupportFlow Client running on this PC: list your stations, read their telemetry, and run ControlKey-signed commands on them. Needs the SupportFlow Client (1.5.18.1 or later) installed and signed in.",
+  "author": {
+    "name": "Koquelani Systems",
+    "url": "https://www.koquelani.com/services"
+  },
+  "homepage": "https://www.koquelani.com/services",
+  "keywords": ["supportflow", "remote-support", "kiosk", "endpoints", "mcp", "controlkey"]
+}

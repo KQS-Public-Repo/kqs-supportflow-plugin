@@ -1,0 +1,28 @@
+{
+  "name": "koquelani-supportflow",
+  "owner": {
+    "name": "Koquelani Systems",
+    "url": "https://www.koquelani.com/services"
+  },
+  "metadata": {
+    "description": "KQS SupportFlow for Claude: remote support for your kiosks, workstations and servers through the SupportFlow Client.",
+    "version": "1.5.18"
+  },
+  "plugins": [
+    {
+      "name": "kqs-supportflow",
+      "displayName": "KQS SupportFlow",
+      "source": "./plugins/kqs-supportflow",
+      "description": "Connects Claude to the KQS SupportFlow Client running on this PC: list your stations, read their telemetry, and run ControlKey-signed commands on them. Needs the SupportFlow Client (1.5.18.1 or later) installed and signed in.",
+      "version": "1.5.18",
+      "author": {
+        "name": "Koquelani Systems",
+        "url": "https://www.koquelani.com/services"
+      },
+      "homepage": "https://www.koquelani.com/services",
+      "category": "operations",
+      "keywords": ["supportflow", "remote-support", "kiosk", "endpoints", "mcp", "controlkey"],
+      "tags": ["mcp", "remote-support"]
+    }
+  ]
+}
