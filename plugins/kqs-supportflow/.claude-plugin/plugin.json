@@ -2,11 +2,11 @@
   "name": "kqs-supportflow",
   "displayName": "KQS SupportFlow",
   "version": "1.5.18",
-  "description": "Connects Claude to the KQS SupportFlow Client running on this PC: list your stations, read their telemetry, and run ControlKey-signed commands on them. Needs the SupportFlow Client (1.5.18.1 or later) installed and signed in.",
+  "description": "Connects Claude or ChatGPT to the your remote workstations, kiosks, servers, or IOT devices in a secure manner using a locally installed SupportFlow Client running on this PC: work on remote PCs, fix issues, apply updates, read their telemetry, and run ControlKey-signed commands on them. Needs the SupportFlow Client (1.5.18.1 or later) installed and signed in.",
   "author": {
     "name": "Koquelani Systems",
-    "url": "https://www.koquelani.com/services"
+    "url": "https://www.koquelani.com"
   },
-  "homepage": "https://www.koquelani.com/services",
-  "keywords": ["supportflow", "remote-support", "kiosk", "endpoints", "mcp", "controlkey"]
+  "homepage": "https://www.koquelani.com/supportflow.htm",
+  "keywords": ["supportflow", "remote-support", "kiosk", "endpoints", "mcp", "controlkey", "connect any remote workstation, kiosk, signage, or IOT device to Claude or ChatGPT", "endpoints connect thru firewalls"]
 }
