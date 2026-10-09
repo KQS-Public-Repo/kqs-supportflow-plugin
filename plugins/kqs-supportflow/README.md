@@ -30,14 +30,6 @@ and tells you what to fix.
 **The Client is not on your PATH?** (an install older than 1.5.19, or a copy run from a folder) Run the current
 `KQS_SupportFlow_setup.exe`, which adds the Client to your PATH, then fully quit and restart Claude.
 
-## What this plugin runs
-
-One MCP server, `kqs-support`, started as `KQS_SupportFlow.exe --mcp-stdio`. That is the installed SupportFlow Client in
-bridge mode: it reads MCP messages from Claude on stdin, passes each one to the Client's own connection on this PC
-(`http://127.0.0.1:<port>/mcp`) with the sign-in the Client saved for this Windows user, and writes the answers to
-stdout. It opens no ports and installs nothing. The plugin itself contains no programs, keys or tokens - only this
-configuration, a setup check (`/kqs-supportflow:setup`) and documentation.
-
 **Not signed in yet?** The tools answer that the SupportFlow Client is not signed in for this Windows user. Open the Client,
 sign in, then restart Claude so it reconnects to the tools.
 
@@ -48,3 +40,25 @@ Claude Code → **Remove**) or don't install the plugin.
 The SupportFlow Client (1.5.18 and later) notices this plugin. It shows Claude Code as **● via plugin**, doesn't
 offer to install its own copy, and asks before adding one if you press Install anyway. If both are present, it shows
 **● installed twice**.
+
+## What this plugin runs
+
+One MCP server, `kqs-support`, started as `KQS_SupportFlow.exe --mcp-stdio`. That is the installed SupportFlow Client in
+bridge mode: it reads MCP messages from Claude on stdin, passes each one to the Client's own connection on this PC
+(`http://127.0.0.1:<port>/mcp`) with the sign-in the Client saved for this Windows user, and writes the answers to
+stdout. It opens no ports and installs nothing. The plugin itself contains no programs, keys or tokens - only this
+configuration, a setup check (`/kqs-supportflow:setup`) and documentation.
+
+## Where your data goes
+
+- **Claude to the Client:** every tool call, with its arguments (for example a command to run on a station), goes to the
+  SupportFlow Client on this PC.
+- **The Client to KQS SupportFlow:** the Client carries the call over its encrypted connection to the KQS SupportFlow service,
+  run by Koquelani Systems (www.koquelani.com). The service passes it to the station the call names.
+- **The answer comes back the same way, to Claude.** It can include telemetry, command output, file listings, files you
+  ask for and screenshots.
+- **ControlKey:** commands sent to a station are signed with your ControlKey in the Client, and a station that uses ControlKey
+  checks the signature before it acts.
+
+The plugin sends nothing anywhere else. The KQS SupportFlow service and the Client are covered by Koquelani's own terms;
+see https://www.koquelani.com/services.
