@@ -6,7 +6,7 @@ Client - this plugin holds no keys, no tokens and no settings of its own.
 
 ## Before you start
 
-1. Install the **SupportFlow Client 1.5.18.1 or later** and sign in: https://www.koquelani.com/services/clientdownload
+1. Install the **SupportFlow Client 1.5.19 or later** and sign in: https://www.koquelani.com/services/clientdownload
    The installer puts the Client on your PATH, which is how this plugin finds it.
 2. Leave the Client running and connected - Claude reaches your stations through it.
 3. Restart Claude after installing the Client, so it sees the updated PATH.
@@ -27,7 +27,7 @@ plugin directory.
 **Something not working?** Run `/kqs-supportflow:setup`. It checks that the Client is installed, signed in and connected,
 and tells you what to fix.
 
-**The Client is not on your PATH?** (an install older than 1.5.18.1, or a copy run from a folder) Run the current
+**The Client is not on your PATH?** (an install older than 1.5.19, or a copy run from a folder) Run the current
 `KQS_SupportFlow_setup.exe`, which adds the Client to your PATH, then fully quit and restart Claude.
 
 ## What this plugin runs
@@ -45,6 +45,6 @@ sign in, then restart Claude so it reconnects to the tools.
 plugin would add a second copy of the same tools. Use one or the other: remove the Client's entry (gear → AI Connectors →
 Claude Code → **Remove**) or don't install the plugin.
 
-The SupportFlow Client (1.5.18.0 and later) notices this plugin. It shows Claude Code as **● via plugin**, doesn't
+The SupportFlow Client (1.5.18 and later) notices this plugin. It shows Claude Code as **● via plugin**, doesn't
 offer to install its own copy, and asks before adding one if you press Install anyway. If both are present, it shows
 **● installed twice**.

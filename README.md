@@ -6,7 +6,7 @@ SupportFlow Client itself is installed separately with `KQS_SupportFlow_setup.ex
 
 ## Quick start
 
-1. Install the **SupportFlow Client 1.5.18.1 or later** and sign in: https://www.koquelani.com/services/clientdownload
+1. Install the **SupportFlow Client 1.5.19 or later** and sign in: https://www.koquelani.com/services/clientdownload
 2. Install the plugin:
 
    ```

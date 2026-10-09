@@ -21,7 +21,7 @@ Call the `kqs-support` server's `server_status` tool (or `my_organization` if th
 The plugin starts `KQS_SupportFlow.exe`, which the installer puts on the PATH. Tell the user:
 
 1. Download and run **KQS_SupportFlow_setup.exe** from https://www.koquelani.com/services/clientdownload
-   (version 1.5.18.1 or later; an older Client must be updated).
+   (version 1.5.19 or later; an older Client must be updated).
 2. **Fully quit and restart Claude** afterwards. Programs only see a new PATH when they start.
 
 ## 3. Has this Windows user signed in?
