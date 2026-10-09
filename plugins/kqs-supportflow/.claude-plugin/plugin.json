@@ -8,5 +8,9 @@
     "url": "https://www.koquelani.com"
   },
   "homepage": "https://www.koquelani.com/supportflow.htm",
+  "repository": "https://github.com/KQS-Public-Repo",
+  "support": "https://www.koquelani.com/services/contact",
+  "documentation": "https://www.koquelani.com/services/help",
+  "termsOfService": "https://www.koquelani.com/supportflow-terms.htm",
   "keywords": ["supportflow", "remote-support", "kiosk", "endpoints", "mcp", "controlkey", "connect any remote workstation, kiosk, signage, or IOT device to Claude or ChatGPT", "endpoints connect thru firewalls"]
 }
