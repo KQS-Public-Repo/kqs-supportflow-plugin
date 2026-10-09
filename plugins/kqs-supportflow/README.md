@@ -27,8 +27,16 @@ plugin directory.
 **Something not working?** Run `/kqs-supportflow:setup`. It checks that the Client is installed, signed in and connected,
 and tells you what to fix.
 
-**The Client is not on your PATH?** (an install older than 1.5.18.1, or a copy run from a folder) Set
-`KQS_SUPPORTFLOW_EXE` to the full path of `KQS_SupportFlow.exe`, then restart Claude.
+**The Client is not on your PATH?** (an install older than 1.5.18.1, or a copy run from a folder) Run the current
+`KQS_SupportFlow_setup.exe`, which adds the Client to your PATH, then fully quit and restart Claude.
+
+## What this plugin runs
+
+One MCP server, `kqs-support`, started as `KQS_SupportFlow.exe --mcp-stdio`. That is the installed SupportFlow Client in
+bridge mode: it reads MCP messages from Claude on stdin, passes each one to the Client's own connection on this PC
+(`http://127.0.0.1:<port>/mcp`) with the sign-in the Client saved for this Windows user, and writes the answers to
+stdout. It opens no ports and installs nothing. The plugin itself contains no programs, keys or tokens - only this
+configuration, a setup check (`/kqs-supportflow:setup`) and documentation.
 
 **Not signed in yet?** The tools answer that the SupportFlow Client is not signed in for this Windows user. Open the Client,
 sign in, then restart Claude so it reconnects to the tools.

@@ -1,7 +1,7 @@
 {
   "mcpServers": {
     "kqs-support": {
-      "command": "${KQS_SUPPORTFLOW_EXE:-KQS_SupportFlow.exe}",
+      "command": "KQS_SupportFlow.exe",
       "args": ["--mcp-stdio"]
     }
   }
