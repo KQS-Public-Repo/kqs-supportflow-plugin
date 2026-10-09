@@ -17,3 +17,6 @@ SupportFlow Client itself is installed separately with `KQS_SupportFlow_setup.ex
 3. Restart Claude.
 
 Full details: [plugins/kqs-supportflow/README.md](plugins/kqs-supportflow/README.md)
+
+Servers, outbound ports and the Client's local MCP address (`http://127.0.0.1:9191/mcp`): see
+[Servers and ports](plugins/kqs-supportflow/README.md#servers-and-ports).

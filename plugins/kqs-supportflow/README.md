@@ -54,7 +54,8 @@ configuration, a setup check (`/kqs-supportflow:setup`) and documentation.
 - **Claude to the Client:** every tool call, with its arguments (for example a command to run on a station), goes to the
   SupportFlow Client on this PC.
 - **The Client to KQS SupportFlow:** the Client carries the call over its encrypted connection to the KQS SupportFlow service,
-  run by Koquelani Systems (www.koquelani.com). The service passes it to the station the call names.
+  run by Koquelani Systems (www.koquelani.com). The service passes it to the station the call names. The servers are
+  listed under [Servers and ports](#servers-and-ports).
 - **The answer comes back the same way, to Claude.** It can include telemetry, command output, file listings, files you
   ask for and screenshots.
 - **ControlKey:** commands sent to a station are signed with your ControlKey in the Client, and a station that uses ControlKey
@@ -62,3 +63,38 @@ configuration, a setup check (`/kqs-supportflow:setup`) and documentation.
 
 The plugin sends nothing anywhere else. The KQS SupportFlow service and the Client are covered by Koquelani's own terms;
 see https://www.koquelani.com/services.
+
+## Servers and ports
+
+The plugin itself makes no network connections: it talks only to the SupportFlow Client on this PC. The Client makes every
+connection outward and directly, never through a web proxy. It opens no port that can be reached from outside this PC, so
+Windows Firewall needs no rule.
+
+If your network filters outgoing traffic, allow these:
+
+| Server | Outbound port | What for |
+|---|---|---|
+| `sso1.koquelani.com` | TCP 9443 | The Client's encrypted connection to KQS SupportFlow. Every tool call travels this way. This is the primary server. |
+| `sso2.koquelani.com` | TCP 9443 | The same connection, when sso1 does not answer. |
+| `sf01-east.koquelani.com` | TCP 9443 | The same connection, when neither of the above answers. |
+| The same three servers | TCP 443 (HTTPS) | Two uses only. When every server has failed on 9443, the Client tries 443 to tell you whether your network is blocking 9443. When you update your Endpoints, it downloads the new Endpoint build and checks it before signing the update. |
+
+- **More servers:** the service can name other servers for the Client to use, always under `koquelani.com`. A rule for
+  `*.koquelani.com` on TCP 9443 and TCP 443 therefore will not need changing later.
+- **Names:** the Client looks names up through your normal DNS.
+- **Web pages:** sign-up, Help, the portal and downloads at `www.koquelani.com` open in your web browser, over ordinary HTTPS
+  (TCP 443).
+
+### Local MCP access (this PC only)
+
+The SupportFlow Client serves MCP on this PC at **`http://127.0.0.1:9191/mcp`**.
+
+| | |
+|---|---|
+| Address | `127.0.0.1` (loopback) only. Nothing outside this PC can reach it. |
+| Port | **TCP 9191** by default. To change it, edit **Local MCP port** in the Client's settings (gear → Server Cfg). This plugin always uses the port the Client saved. |
+| Path | `/mcp` |
+| Sign-in | Every request needs your account's MCP token. This plugin's bridge adds it from the Client's saved sign-in, so you never copy it. For other AI apps, the Client's **AI Connectors** (gear → AI Connectors) set them up with the token. |
+
+The browser viewer uses **TCP 9788**, also on `127.0.0.1` only. Neither port is opened to the network. If your security
+software asks about either one, allow it.
