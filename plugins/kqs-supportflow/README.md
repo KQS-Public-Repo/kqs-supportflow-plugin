@@ -76,8 +76,9 @@ If your network filters outgoing traffic, allow these:
 |---|---|---|
 | `sso1.koquelani.com` | TCP 9443 | The Client's encrypted connection to KQS SupportFlow. Every tool call travels this way. This is the primary server. |
 | `sso2.koquelani.com` | TCP 9443 | The same connection, when sso1 does not answer. |
-| `sf01-east.koquelani.com` | TCP 9443 | The same connection, when neither of the above answers. |
-| The same three servers | TCP 443 (HTTPS) | Two uses only. When every server has failed on 9443, the Client tries 443 to tell you whether your network is blocking 9443. When you update your Endpoints, it downloads the new Endpoint build and checks it before signing the update. |
+| `sso3.koquelani.com` | TCP 9443 | The same connection, when neither sso1 nor sso2 answers (SupportFlow Client 1.5.20 and later). |
+| `sf01-east.koquelani.com` | TCP 9443 | The same connection, when none of the above answers. |
+| The same four servers | TCP 443 (HTTPS) | Two uses only. When every server has failed on 9443, the Client tries 443 to tell you whether your network is blocking 9443. When you update your Endpoints, it downloads the new Endpoint build and checks it before signing the update. |
 
 - **More servers:** the service can name other servers for the Client to use, always under `koquelani.com`. A rule for
   `*.koquelani.com` on TCP 9443 and TCP 443 therefore will not need changing later.
