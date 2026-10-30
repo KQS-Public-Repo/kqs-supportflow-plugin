@@ -1,7 +1,7 @@
 {
   "name": "kqs-supportflow",
   "displayName": "KQS SupportFlow",
-  "version": "1.5.39",
+  "version": "1.5.40",
   "description": "Connects Claude or ChatGPT to your remote workstations, kiosks, servers, or IOT devices in a secure manner using the locally installed SupportFlow Client running on this PC: work on remote PCs, fix issues, apply updates, read their telemetry, and more. Needs the SupportFlow Client (1.5.19 or later) installed and signed in.",
   "author": {
     "name": "Koquelani Systems",
